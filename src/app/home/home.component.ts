@@ -13,9 +13,6 @@ export class HomeComponent implements OnInit {
   constructor(private listService: ListService) { }
 
   ngOnInit(): void {
-    // this.listService.getAllLists.subscribe(data => {
 
-    // })
   }
-
 }

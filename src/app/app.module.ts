@@ -13,6 +13,9 @@ import { HeaderComponent } from './header/header.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { ListComponent } from './list/list.component';
+import { CommonModule } from '@angular/common';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -22,6 +25,8 @@ import { ListComponent } from './list/list.component';
     NavbarComponent,
     HeaderComponent,
     ListComponent,
+    SignInComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,8 @@ import { ListComponent } from './list/list.component';
     MatToolbarModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
