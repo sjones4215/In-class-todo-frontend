@@ -1,0 +1,34 @@
+.example-container {
+   height: 100%;
+    background: white;
+  }
+
+.sidebar{
+  min-width: 20%;
+  background-color: rgb(17, 118, 233);
+  text-align: center;
+
+  li{
+    list-style: none;
+  }
+
+  button{
+    margin-right: 35px;
+    background-color: red;
+
+    &:hover{
+      background: darken($color: #000000, $amount: 0);
+    }
+  }
+}
+
+.main {
+  text-align: center;
+}
+
+.card{
+  width: 200px;
+  text-align: left;
+  margin-left: 25px;
+}
+
