@@ -1,47 +1,17 @@
-.navbar-container {
-   height: 100%;
-   background: white;
-  }
+.mat-sidenav-container{
+  height: 100%;
+}
 
-.sidebar{
-  min-width: 25%;
-  background-color: rgb(17, 118, 233);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size:18px;
-  padding-top: 10px;
+.mat-sidenav{
+  width: 20%;
   text-align: center;
-  border: solid black 2px;
+  background: cornflowerblue;
 
-  ul{
-
-  }
-
-  li{
-    list-style: none;
-  }
-
-  button{
-    margin-right: 35px;
-    margin-top: 10px;
-    margin-bottom:10px;
-    background-color: red;
-
-    &:hover{
-      background: darken($color: #bd3333, $amount: 0);
-    }
+  p{
+    margin-top: 25px;
   }
 }
 
-.main {
-  background: linear-gradient(#fefefe, #030303);
-  text-align: center;
- // border: solid black 2px;
+.mat-sidenav-content{
+  height: 100%;
 }
-
-.card {
-  width: 200px;
-  background-color: horizontal-gradient(rgb(255, 255, 255), purple);
-  text-align: left;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-

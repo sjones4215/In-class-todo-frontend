@@ -1,17 +1,8 @@
-<mat-drawer-container class="navbar-container">
-  <mat-drawer class="sidebar" mode="side" opened>Sidebar and stuff
-    <ul>
-      <li>
-        <section>
-        <div class="add-list"></div>
-        <div class="list-button-column">
-          <button mat-raised-button color="primary">Add list</button>
-          <button mat-raised-button color="primar">Next Button</button>
-        </div>
-      </section>
-    </li>
-    </ul>
-  </mat-drawer>
-  <mat-drawer-content class="main"><mat-card class="card">Simple card</mat-card></mat-drawer-content>
-</mat-drawer-container>
-
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" >
+    <p>hello</p>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <p><button mat-button color="primary" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></p>
+  </mat-sidenav-content>
+</mat-sidenav-container>

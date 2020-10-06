@@ -16,6 +16,8 @@ import { ListComponent } from './list/list.component';
 import { CommonModule } from '@angular/common';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
+    MatIconModule,
     CommonModule
   ],
   providers: [],
