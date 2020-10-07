@@ -18,6 +18,10 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatFormField} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -41,6 +45,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatCardModule,
     MatCheckboxModule,
     MatIconModule,
+    HttpClientModule,
+    MatInputModule,
+    MatFormField,
     CommonModule
   ],
   providers: [],
