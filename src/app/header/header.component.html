@@ -1,7 +1,8 @@
 <mat-toolbar>
   <span>ToDo Lists</span>
   <section>
-  <div class="button-row">
+  <div class="button-row" *ngIf="signedIn">
+      <h4>Hello {{nickname}} !</h4>
       <button mat-raised-button color="primary">Sign Out</button>
   </div>
   </section>

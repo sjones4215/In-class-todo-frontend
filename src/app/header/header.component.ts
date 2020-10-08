@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  signedIn = false
+  nickname = '';
+  constructor(private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
+    this.localStorageService.currentUser.subscribe(data => {
+      if (data) {
+        this.signedIn = true
+        this.nickname = data.nickname
+      } else {
+        this.signedIn = false
+      }
+    })
   }
 
 }

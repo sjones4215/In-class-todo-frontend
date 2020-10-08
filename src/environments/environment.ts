@@ -6,7 +6,7 @@ import { BaseRouteReuseStrategy } from '@angular/router';
 
 export const environment = {
   production: false,
-  baseUrl: "http://localhost:3000/"
+  baseUrl: "https://in-class-todo-api-backend.herokuapp.com/"
 };
 
 /*

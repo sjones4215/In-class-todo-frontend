@@ -1,6 +1,35 @@
-<div class="example-container">
-  <mat-form-field appearance="fill">
-    <mat-label>Input</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <br>
+<form [formGroup] = "formGroup">
+    <mat-card>
+      <mat-form-field for="firstName" class="first_name" appearance="fill">
+          <mat-label>First name</mat-label>
+        <input matInput name="firstName" type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp" formControlName="first_name">
+      </mat-form-field>
+      <mat-form-field  for="lastName" class="last-name" appearance="fill">
+          <mat-label>Last name</mat-label>
+        <input matInput name="lastName" type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp" formControlName="last_name">
+     </mat-form-field>
+     <mat-form-field for="nickname" class="nickname" appearance="fill">
+      <mat-label>nickname</mat-label>
+      <input matInput name="nickname" type="text" class="form-control" id="nickname" aria-describedby="nicknameHelp" formControlName="nickname">
+    </mat-form-field>
+      <mat-form-field for="email" class="email" appearance="fill">
+        <mat-label>email</mat-label>
+     <input matInput name="email" type="text" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+    </mat-form-field>
+    <mat-form-field for="password" class="password" appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" name="password" type="text" class="password" id="password" aria-describedby="passwordHelp" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field class="password_confirmation" appearance="fill">
+      <mat-label>Enter password confirmation</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" name="password_confirmation" type="text" class="password_confirmation" id="password_confirmation" aria-describedby="password_confirmationHelp" formControlName="password_confirmation">
+    </mat-form-field>
+      <p class="sm-caption"> if you are already signed-up <a [routerLink]="['/sign-in']">sign-in</a></p>
+      <button mat-raised-button color="primary" class="submit" (click)="submitUser()">Submit</button>
+      <button mat-raised-button color="primary" class="cancel">Cancel</button>
+    </mat-card>
+</form>
+

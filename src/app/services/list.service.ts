@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { List } from '../models/list';
-import { ListData } from '../models/listData';
+import { ListData } from '../models/list-data';
 import { HttpClientModule } from '@angular/common/http';
 
 @Injectable({
