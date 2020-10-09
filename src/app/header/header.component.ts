@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { LocalStorageService } from '../services/local-storage.service';
 export class HeaderComponent implements OnInit {
   signedIn = false
   nickname = '';
-  constructor(private localStorageService: LocalStorageService) { }
+  constructor(private localStorageService: LocalStorageService, private router: Router) { }
 
   ngOnInit(): void {
     this.localStorageService.currentUser.subscribe(data => {
@@ -20,6 +21,11 @@ export class HeaderComponent implements OnInit {
         this.signedIn = false
       }
     })
+  }
+
+  logOut() {
+    this.localStorageService.logoutUser()
+      this.router.navigate(['sign-in']);
   }
 
 }

@@ -1,0 +1,17 @@
+<mat-dialog-content>
+<form class="form">
+  <p>fill in the fields to add a card</p>
+  <mat-form-field for="title" class="title" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput name="title" type="text" class="title" id="title" aria-describedby="titleHelp" [(ngModel)]="newList.title">
+  </mat-form-field>
+  <mat-form-field for="description" class="description" appearance="fill">
+    <mat-label>Body</mat-label>
+    <textarea matInput name="description" type="text" class="description" id="description" aria-describedby="descriptionHelp" [(ngModel)]="newList.description"></textarea>
+  </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button class="add-list" mat-raised-button color="primary" (click)="addNewList()"[mat-dialog-close]>add list</button>
+  <button class="cancel" mat-raised-button color="primary" mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

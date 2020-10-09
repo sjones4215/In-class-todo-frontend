@@ -27,9 +27,9 @@
       <mat-label>Enter password confirmation</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'" name="password_confirmation" type="text" class="password_confirmation" id="password_confirmation" aria-describedby="password_confirmationHelp" formControlName="password_confirmation">
     </mat-form-field>
-      <p class="sm-caption"> if you are already signed-up <a [routerLink]="['/sign-in']">sign-in</a></p>
+      <p class="sm-caption"> if you are already signed-up <a [routerLink]="['/sign-in']">Sign-In</a></p>
       <button mat-raised-button color="primary" class="submit" (click)="submitUser()">Submit</button>
-      <button mat-raised-button color="primary" class="cancel">Cancel</button>
+      <button mat-raised-button color="primary" class="cancel" [routerLink]="['/sign-in']">Cancel</button>
     </mat-card>
 </form>
 

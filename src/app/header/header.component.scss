@@ -3,11 +3,19 @@ mat-toolbar{
   background-color: rgb(85, 188, 223);
   font-family: 'Roboto, monospace';
   font-weight: 'bold';
-  font-size: 40px;
+  font-size: 20px;
   border: red 10px;
 }
 
 section{
   float: right;
-  margin-left: 75%;
+  margin-left: 68%;
+
+  p{
+    display: inline;
+    margin-right: 8%;
+  }
 }
+
+
+

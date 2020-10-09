@@ -31,7 +31,7 @@ export class SignUpComponent implements OnInit {
     this.userService.signup(this.formGroup.value).subscribe((data: User) => {
       this.localStroageService.saveUser(data);
       if (data) {
-        console.log(data)
+        this.router.navigate(['home'])
       }
     })
   }

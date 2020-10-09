@@ -22,6 +22,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { AddListComponent } from './add-list/add-list.component';
+import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ListPageComponent } from './list-page/list-page.component';
+
+
+
 
 
 
@@ -34,6 +41,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     ListComponent,
     SignInComponent,
     SignUpComponent,
+    AddListComponent,
+    ListPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +60,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-
+    MatListModule,
+    MatDialogModule,
     CommonModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, ],

@@ -1,3 +1,17 @@
-<app-navbar></app-navbar>
-<p>hello</p>
 
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <mat-list class="add-list"><button mat-mini-fab color="primary"(click)="openDialog()"><mat-icon class="material-icons">add</mat-icon></button></mat-list>
+    <mat-list class="list-title" *ngFor="let lists of lists"><p>{{lists.title}}</p></mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button mat-button color="primary" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <mat-card class="list-container" *ngFor="let lists of lists">
+      <mat-icon class="material-icons" (click)="deleteList(lists.id)">delete</mat-icon>
+      <h3>{{lists.title}}</h3>
+      <mat-card-content>
+        <p>{{lists.description}}</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -19,6 +19,7 @@ export class LocalStorageService {
      localStorage.setItem('lastName', user.last_name);
      localStorage.setItem('userEmail', user.email);
      localStorage.setItem('nickname', user.nickname);
+     localStorage.setItem('token', user.token)
      localStorage.setItem('userId', user.id.toString());
      this.currentUser.next(user)
    }
@@ -43,7 +44,6 @@ export class LocalStorageService {
   logoutUser() {
     localStorage.clear();
     this.currentUser.next(null);
-    this.router.navigate(['sign-in'])
   }
 
   isLoggedIn() {
