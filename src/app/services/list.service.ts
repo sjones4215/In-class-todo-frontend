@@ -26,7 +26,7 @@ export class ListService {
   }
 
   getAList(id:number): Observable<any> {
-    return this.http.get(this.baseUrl + 'lists/show?id=' + id)
+    return this.http.get<any>(this.baseUrl + 'lists/show?id=' + id)
   }
 
   addList(list: List) {

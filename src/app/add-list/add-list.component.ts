@@ -1,6 +1,7 @@
 import { Component, OnInit, ɵɵresolveBody } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
 import { List } from '../models/list';
 import { ListService } from '../services/list.service';
 import { LocalStorageService } from '../services/local-storage.service';
@@ -22,7 +23,10 @@ export class AddListComponent implements OnInit {
     this.listService.addList(this.newList).subscribe(data => {
       if (data)
         this.ngOnInit();
-
     })
+  }
+
+  reloadPage() {
+    location.reload();
   }
 }

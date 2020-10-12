@@ -4,6 +4,7 @@ import { Action } from 'rxjs/internal/scheduler/Action';
 import { Card } from '../models/card';
 import { List } from '../models/list';
 import { ListService } from '../services/list.service';
+import { MessengerService } from '../services/messenger.service';
 
 @Component({
   selector: 'app-list-page',
@@ -13,7 +14,7 @@ import { ListService } from '../services/list.service';
 export class ListPageComponent implements OnInit {
   list: List = null
   cards: Card[] = []
-  constructor(private route: ActivatedRoute, private listService: ListService) { }
+  constructor(private route: ActivatedRoute, private listService: ListService,private messageService: MessengerService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -27,5 +28,7 @@ export class ListPageComponent implements OnInit {
       }
     })
   }
+
+
 
 }

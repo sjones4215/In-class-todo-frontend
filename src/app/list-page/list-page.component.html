@@ -1,5 +1,8 @@
-<p>list-page works!</p>
- <!---- <mat-icon class="material-icons" (click)="deleteList(lists.id)">delete</mat-icon>
-  <h3>{{lists.title}}</h3>
-  <h2>{{lists.description}}</h2>
-</mat-card> -->
+<div class="card-container" *ngIf="list != null">
+  <mat-card *ngFor="let list of list">
+    <mat-card-title>{{list.title}}</mat-card-title>
+    <mat-card-content *ngFor="let card of cards">
+      <p>{{card.body}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

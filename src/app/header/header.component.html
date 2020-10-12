@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>ToDo Lists</span>
+  <span [routerLink]="['/home']">ToDo Lists</span>
   <section>
   <div class="button-row" *ngIf="signedIn">
       <p>Hello {{nickname}} !</p>
