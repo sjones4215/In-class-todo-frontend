@@ -26,9 +26,13 @@ export class SignInComponent implements OnInit {
     const newUser = new NewUser(this.formGroup.value)
       this.userService.signin(newUser).subscribe((data: User) => {
       this.localStorageService.saveUser(data);
-        if (data)
-          this.router.navigate(['home'])
       })
   }
 
+  reloadPage() {
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+  }
 }
+

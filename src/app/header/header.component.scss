@@ -1,10 +1,17 @@
 mat-toolbar{
   color: rgb(243, 250, 252);
-  background-color: rgb(85, 188, 223);
+  background: linear-gradient(rgb(64, 221, 208), rgb(46, 147, 206));
+  box-shadow: 0px -3px 19px black;
+
   font-family: 'Roboto, monospace';
   font-weight: 'bold';
   font-size: 20px;
   border: red 10px;
+}
+
+.main-button-header{
+font-size: 40px;
+margin-left: 15px;
 }
 
 section{

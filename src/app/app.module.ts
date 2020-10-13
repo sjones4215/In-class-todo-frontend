@@ -62,6 +62,7 @@ import { ListPageComponent } from './list-page/list-page.component';
     MatFormFieldModule,
     MatListModule,
     MatDialogModule,
+    
     CommonModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, ],

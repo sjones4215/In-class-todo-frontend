@@ -36,4 +36,8 @@ export class ListService {
   destroyList(id :number): Observable<any>{
     return this.http.delete<any>( this.baseUrl + 'lists/destroy?id=' + id)
   }
+
+  updateList (list: List) {
+    return this.http.patch(this.baseUrl + 'lists/update?id=' + list.id, list)
+  }
 }

@@ -2,17 +2,15 @@
 
 <mat-sidenav-container class="container">
   <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-    <mat-list class="add-list"><button mat-mini-fab color="primary"(click)="openDialog()"><mat-icon class="material-icons">add</mat-icon></button></mat-list>
-    <mat-list class="list-title" *ngFor="let lists of lists"><p (click)="listProfile(lists.id)">{{lists.title}}</p></mat-list>
-  </mat-sidenav>
+</mat-sidenav>
   <mat-sidenav-content>
-    <button mat-button color="primary" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-    <mat-card class="list-container" *ngFor="let lists of lists">
-      <mat-icon class="material-icons" (click)="reloadPage();deleteList(lists.id);">delete</mat-icon>
-      <h3>{{lists.title}}</h3>
+    <mat-card class="list-container" *ngFor="let list of lists">
+      <mat-icon class="material-icons" (click)="reloadPage();deleteList(list.id);">delete</mat-icon>
+      <h3>{{list.title}}</h3>
       <mat-card-content>
-        <mat-icon class="material-icons-outlined">check_box</mat-icon>
-        <p>{{lists.description}}</p>
+        <mat-icon *ngIf="!list.completed"class="material-icons-outlined" (click)="check(list);sortList()">check_box</mat-icon>
+        <mat-icon *ngIf="list.completed" class="material-icons" (click)="check(list);sortList()">check_box</mat-icon>
+        <p>{{list.description}}</p>
       </mat-card-content>
     </mat-card>
   </mat-sidenav-content>

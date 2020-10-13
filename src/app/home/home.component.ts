@@ -12,17 +12,26 @@ import { ListService } from '../services/list.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  opened = false
+  opened = true
   lists: List[] = []
 
   constructor(private listService: ListService, public dialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
     this.retreiveAllLists();
-  }
+    this.lists.sort((a, b) => {
+      if (a.completed === b.completed) {
+         return 0;
+      }
 
-  ngOnChanges () {
+      if (a.completed) {
+         return -1;
+      }
 
+      if (b.completed) {
+         return 1;
+      }
+    });
   }
 
   retreiveAllLists() {
@@ -34,13 +43,6 @@ export class HomeComponent implements OnInit {
     }
 
 
-    openDialog() {
-      const dialogRef = this.dialog.open(AddListComponent);
-
-      dialogRef.afterClosed().subscribe(result => {
-        console.log(`Dialog result: ${result}`);
-      });
-    }
 
     deleteList(id:number) {
       this.listService.destroyList(id).subscribe(data => {
@@ -50,17 +52,37 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  listProfile(id:number) {
-    this.listService.getAList(id).subscribe(data => {
-      if (data) {
-        this.router.navigate(['listprofile/:id'])
-      }
-    })
-  }
+
 
   reloadPage() {
     setTimeout(() => {
       window.location.reload();
-    }, 100);
+    }, 200);
   }
+
+  check(list: List) {
+    list.completed = !list.completed
+    this.listService.updateList(list).subscribe(data => {
+      return data
+    });
+  }
+
+  sortList() {
+    this.lists.sort((a, b) => {
+      if (a.completed === b.completed) {
+         return 0;
+      }
+
+      if (b.completed) {
+         return -1;
+      }
+
+      if (a.completed) {
+         return 1;
+      }
+    })
+  }
+
 }
+
+

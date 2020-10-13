@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class MessengerService {
-  message: BehaviorSubject<any> = new BehaviorSubject(false);
+  message: BehaviorSubject<any> = new BehaviorSubject(null);
   constructor() { }
 
   onListPage () {

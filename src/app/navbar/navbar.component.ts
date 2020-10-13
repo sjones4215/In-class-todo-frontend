@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { AddListComponent } from '../add-list/add-list.component';
+import { List } from '../models/list';
+import { ListService } from '../services/list.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +13,15 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   opened: boolean;
 
-  ngOnInit(): void {
 
+  constructor(public dialog: MatDialog, private router: Router, private listService: ListService) {}
+
+  ngOnInit(): void {
   }
-  
+
+
+
+
+
 
 }

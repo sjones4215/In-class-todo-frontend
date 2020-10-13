@@ -1,20 +1,4 @@
-.mat-sidenav-container{
-  height: 100%;
-}
 
-.mat-sidenav{
-  width: 20%;
-  text-align: center;
-  background: cornflowerblue;
-
-  h2{
-    margin-top: 25px;
-  }
-}
-
-.mat-sidenav-content{
-  height: 100%;
-}
 mat-card {
   max-width: 30%;
   max-height: 50%;
@@ -24,32 +8,26 @@ mat-card {
 
   mat-icon {
     float: right;
+    
+    &:hover {
+      cursor: pointer;
+    }
   }
+}
+
+.list-container {
+  background: rgb(194, 142, 224);
+  box-shadow: 10px 5px 8px rgb(145, 145, 145);
 }
 
 mat-card.add-list{
   float: right;
 }
 
-.list-title {
-  -webkit-filter: brightness(100%);
-  color: white;
-  margin-top: 25px;
-
-  &:hover {
-    cursor: pointer;
-  -webkit-filter: brightness(70%);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-  }
-}
-
-.material-icons{
-  cursor: pointer;
-}
+// .container {
+//   background-color: rgb(196, 196, 196);
+//   padding-top: 20px;
+// }
 
 .checkmark {
   margin-bottom: 50px;

@@ -1,6 +1,10 @@
 <mat-toolbar>
-  <span [routerLink]="['/home']">ToDo Lists</span>
+  <span class="main-button-header"[routerLink]="['/home']">ToDo Lists</span>
   <section>
+    <div class="button-row" *ngIf="!signedIn">
+      <button mat-raised-button color="primary" (click)="openDialogSignIn();">Sign-in</button>
+      <button mat-raised-button color="primary" (click)="openDialogSignUp();">Sign-up</button>
+    </div>
   <div class="button-row" *ngIf="signedIn">
       <p>Hello {{nickname}} !</p>
       <button mat-raised-button color="primary" (click)="logOut()">Sign Out</button>

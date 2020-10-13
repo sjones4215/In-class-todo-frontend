@@ -1,6 +1,44 @@
-.example-container {
-  width: 400px;
-  height: 200px;
-  margin: 10px;
-  border: 1px solid #555;
+.list-title {
+  -webkit-filter: brightness(100%);
+  color: white;
+  margin-top: 25px;
+
+  &:hover {
+    cursor: pointer;
+  -webkit-filter: brightness(70%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  }
+}
+
+.material-icons{
+  cursor: pointer;
+}
+.mat-sidenav-container{
+  height: 100%;
+}
+
+.mat-sidenav{
+  width: 20%;
+  text-align: center;
+  background: cornflowerblue;
+
+  h2{
+    margin-top: 25px;
+  }
+}
+
+.mat-sidenav-content{
+  height: 100%;
+}
+
+
+mat-card {
+  text-align: center;
+  margin: 100px;
+  width: 40%;
+  height: 40%;
 }

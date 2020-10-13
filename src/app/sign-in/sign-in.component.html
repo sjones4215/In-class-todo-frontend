@@ -1,5 +1,4 @@
 <form [formGroup] = "formGroup">
-  <mat-card class="card-container">
     <mat-form-field for="email" class="email" appearance="fill">
       <mat-label>Email</mat-label>
       <input matInput name="email" type="text" class="email" id="email" aria-describedby="emailHelp" formControlName="email">
@@ -12,6 +11,5 @@
       </button>
     </mat-form-field>
     <p class="sm-caption">If you do not have an account, Click Here --><a [routerLink]="['/sign-up']"> Sign-Up</a></p>
-    <button mat-raised-button color="primary" class="submit"(click)="signIn()">Submit</button>
-  </mat-card>
+    <button mat-raised-button color="primary" class="submit"(click)="reloadPage();signIn()"[mat-dialog-close]>Submit</button>
 </form>

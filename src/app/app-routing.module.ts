@@ -8,11 +8,12 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
-{path: '', component: SignInComponent},
+{path: '', component: HomeComponent},
 {path: 'sign-up', component: SignUpComponent},
 {path: 'sign-in', component: SignInComponent },
-{path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-{path: 'listprofile/:id', component: ListPageComponent, canActivate: [AuthGuard]}
+{path: 'home', component: HomeComponent},
+{path: 'listprofile/:id', component: ListPageComponent},
+{path: 'listprofile', redirectTo:'', pathMatch: 'full'}
 ]
 
 @NgModule({
