@@ -1,8 +1,24 @@
-<div class="card-container" *ngIf="list !== null">
-  <mat-card>
-    <mat-card-title>{{list.title}}</mat-card-title>
-    <mat-card-content>
-      <p></p>
+<div class="list-container">
+  <mat-card class="card-container">
+        <mat-icon (click)="deleteIcons();">delete</mat-icon>
+        <mat-card-title *ngIf="list">{{list.title}}</mat-card-title>
+      <mat-divider></mat-divider>
+    <mat-card-content class="card">
+      <mat-list *ngIf="!delete">
+        <mat-list-item *ngFor="let card of cards">
+          <mat-checkbox [checked]="completeCard()"></mat-checkbox>
+          <p matLine>{{card.body}}</p>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+        <mat-list *ngIf="delete">
+            <mat-list-item *ngFor="let card of cards">
+              <mat-icon matListIcon class="delete" (click)="deleteCard(card.id);">delete</mat-icon>
+            <p matLine>{{card.body}}</p>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      <button mat-mini-fab color="primary" class="material-icons"(click)="openDialogCard();">add</button>
     </mat-card-content>
   </mat-card>
 </div>

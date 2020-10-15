@@ -1,3 +1,32 @@
-// .card-container {
-// background: purple;
-// }
+
+mat-card-title{
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+mat-card {
+  max-width: 40%;
+  margin-left: 25%;
+}
+
+button {
+  margin-top: 15px;
+  margin-left: 45%;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+
+mat-icon {
+  float: right;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+mat-icon[matListIcon] {
+  float: right;
+}

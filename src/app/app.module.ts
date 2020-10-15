@@ -25,7 +25,9 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { AddListComponent } from './add-list/add-list.component';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
 import { ListPageComponent } from './list-page/list-page.component';
+import { AddCardComponent } from './add-card/add-card.component';
 
 
 
@@ -43,6 +45,7 @@ import { ListPageComponent } from './list-page/list-page.component';
     SignUpComponent,
     AddListComponent,
     ListPageComponent,
+    AddCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,8 +64,9 @@ import { ListPageComponent } from './list-page/list-page.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatListModule,
+    MatDividerModule,
     MatDialogModule,
-    
+
     CommonModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, ],

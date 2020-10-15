@@ -1,0 +1,23 @@
+
+.submit {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+mat-icon{
+  margin-left: 90%;
+  padding-bottom: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+form{
+  margin-top: -5px;
+}
+
+p{
+  margin-top: 10px;
+}

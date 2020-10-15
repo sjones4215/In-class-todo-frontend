@@ -32,7 +32,7 @@ export class SignInComponent implements OnInit {
   reloadPage() {
     setTimeout(() => {
       window.location.reload();
-    }, 500);
+    }, 1000);
   }
 }
 
