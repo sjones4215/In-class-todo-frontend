@@ -29,26 +29,11 @@ export class ListPageComponent implements OnInit {
       this.listService.getAList(params.id).subscribe(data => {
         this.list = data
         this.cards = data.cards
-        console.log(data);
-
-        this.cards.sort((a, b) => {
-          if (a.completed === b.completed) {
-             return 0;
-          }
-
-          if (a.completed) {
-             return -1;
-          }
-
-          if (b.completed) {
-             return 1;
-          }
-        });
-
-        })
+        this.sortCards();
       }
-    });
-  }
+    )}
+  })
+}
 
   deleteIcons(){
     const cardsToDelete = this.cards.filter(c => c.selected)
@@ -61,6 +46,7 @@ export class ListPageComponent implements OnInit {
     const cardsToComplete = this.cards.filter(c => c.selected)
       cardsToComplete.forEach(card => {
         this.checkComplete(card)
+        this.sortCards();
       })
   }
 
@@ -87,20 +73,13 @@ export class ListPageComponent implements OnInit {
   }
 
   sortCards() {
-    this.cards.sort((a, b) => {
-      if (a.completed === b.completed) {
-         return 0;
-      }
+    const sortedCards = this.cards.filter(c => c.completed)
+       sortedCards.sort( function(x, y) {
+         return (x === y)? 0 : x? -1 : 1;
+       }
+      )}
 
-      if (a.completed) {
-         return -1;
-      }
 
-      if (b.completed) {
-         return 1;
-      }
-    });
-  }
 
   deleteCard(id: number) {
     this.cardService.destroyCard(id).subscribe(data => {

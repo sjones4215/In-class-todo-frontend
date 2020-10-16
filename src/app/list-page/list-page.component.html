@@ -8,7 +8,7 @@
       <mat-list>
         <mat-list-item *ngFor="let card of cards">
           <mat-checkbox [(ngModel)]="card.selected"></mat-checkbox>
-          <p matLine>{{card.body}}</p>
+          <p matLine [ngClass]= "{ complete:card.completed }">{{card.body}}</p>
         <mat-divider></mat-divider>
       </mat-list-item>
     </mat-list>
