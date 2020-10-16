@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Action } from 'rxjs/internal/scheduler/Action';
@@ -18,8 +19,8 @@ import { MessengerService } from '../services/messenger.service';
 export class ListPageComponent implements OnInit {
   list: List
   cards: Card[] = []
-  completed = false
   delete = false
+
   constructor(private route: ActivatedRoute, private listService: ListService,public dialog: MatDialog, private cardService: CardService) { }
 
   ngOnInit(): void {
@@ -50,12 +51,25 @@ export class ListPageComponent implements OnInit {
   }
 
   deleteIcons(){
-    this.delete = !this.delete
+    const cardsToDelete = this.cards.filter(c => c.selected)
+      cardsToDelete.forEach(card => {
+        this.deleteCard(card.id)
+    })
   }
 
   completeCard() {
-    this.completed = !this.completed
-    this.sortCards();
+    const cardsToComplete = this.cards.filter(c => c.selected)
+      cardsToComplete.forEach(card => {
+        this.checkComplete(card)
+      })
+  }
+
+  checkComplete(card: Card) {
+    card.completed = !card.completed
+    this.cardService.updateCard(card).subscribe(data => {
+      if (data)
+        console.log(data)
+    });
   }
 
   openDialogCard() {

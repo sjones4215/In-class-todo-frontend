@@ -18,4 +18,8 @@ export class CardService {
   destroyCard(id: number) {
     return this.http.delete( this.baseUrl + 'cards/destroy?id=' + id)
   }
+
+  updateCard (card: Card) {
+    return this.http.patch( this.baseUrl + 'cards/update?id=' + card.id, card)
+  }
 }

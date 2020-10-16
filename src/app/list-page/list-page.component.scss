@@ -11,7 +11,7 @@ mat-card {
 
 button {
   margin-top: 15px;
-  margin-left: 45%;
+  margin-left: 34%;
 
   &:hover{
     cursor: pointer;
@@ -20,7 +20,6 @@ button {
 
 
 mat-icon {
-  float: right;
 
   &:hover {
     cursor: pointer;
@@ -30,3 +29,14 @@ mat-icon {
 mat-icon[matListIcon] {
   float: right;
 }
+
+mat-icon.check{
+  float: right;
+}
+
+.complete {
+  float: left;
+}
+
+
+
