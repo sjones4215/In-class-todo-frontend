@@ -1,4 +1,5 @@
 
+
 mat-card {
   max-width: 30%;
   max-height: 50%;
@@ -8,7 +9,7 @@ mat-card {
 
   mat-icon {
     float: right;
-    
+
     &:hover {
       cursor: pointer;
     }
@@ -16,20 +17,28 @@ mat-card {
 }
 
 .list-container {
-  background: rgb(194, 142, 224);
-  box-shadow: 10px 5px 8px rgb(145, 145, 145);
+  box-shadow: 10px 5px 8px rgb(54, 223, 209);
+  background: linear-gradient(rgb(130, 130, 228),blue);
+  color:#FAED26;
 }
 
 mat-card.add-list{
   float: right;
 }
 
-// .container {
-//   background-color: rgb(196, 196, 196);
-//   padding-top: 20px;
-// }
-
 .checkmark {
   margin-bottom: 50px;
 }
 
+mat-sidenav-content {
+  background: linear-gradient(rgb(193, 116, 238), rgb(139, 75, 243));
+}
+
+h3:hover {
+  cursor: pointer;
+}
+
+.complete {
+  text-decoration: line-through;
+  text-decoration-color: white;
+}

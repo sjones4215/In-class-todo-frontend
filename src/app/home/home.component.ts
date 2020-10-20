@@ -19,25 +19,25 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.retreiveAllLists();
-    this.lists.sort((a, b) => {
-      if (a.completed === b.completed) {
-         return 0;
-      }
+    // this.lists.sort((a, b) => {
+    //   if (a.completed === b.completed) {
+    //      return 0;
+    //   }
 
-      if (a.completed) {
-         return -1;
-      }
+    //   if (a.completed) {
+    //      return -1;
+    //   }
 
-      if (b.completed) {
-         return 1;
-      }
-    });
+    //   if (b.completed) {
+    //      return 1;
+    //   }
+    // });
   }
 
   retreiveAllLists() {
     this.listService.getAllLists().subscribe(data => {
       if (data)
-        this.lists = data.lists
+        this.lists = data.lists.map(x => Object.assign(new List(), x))
         console.log(data)
       })
     }
@@ -52,36 +52,27 @@ export class HomeComponent implements OnInit {
     })
   }
 
-
-
-  reloadPage() {
-    setTimeout(() => {
-      window.location.reload();
-    }, 200);
-  }
-
-  check(list: List) {
-    list.completed = !list.completed
-    this.listService.updateList(list).subscribe(data => {
-      return data
-    });
-  }
-
   sortList() {
-    this.lists.sort((a, b) => {
-      if (a.completed === b.completed) {
-         return 0;
-      }
+    // this.lists.sort((a, b) => {
+    //   if (a.completed === b.completed) {
+    //      return 0;
+    //   }
 
-      if (b.completed) {
-         return -1;
-      }
+    //   if (b.completed) {
+    //      return -1;
+    //   }
 
-      if (a.completed) {
-         return 1;
-      }
-    })
+    //   if (a.completed) {
+    //      return 1;
+    //   }
+    // })
   }
+
+  listProfile(lists: List) {
+    this.router.navigate(['listprofile/', lists.id])
+  }
+
+
 }
 
 

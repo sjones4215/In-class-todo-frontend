@@ -2,13 +2,14 @@
 <div class="signed-out" *ngIf="!signedIn">
   <mat-card>Please Sign-in or Sign-up to begin</mat-card>
 </div>
-<mat-sidenav-container class="container" *ngIf="signedIn">
+
+<mat-sidenav-container class="my-theme" color="primary" *ngIf="signedIn" style="clear:both;">
   <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-    <mat-list class="add-list"><button mat-raised-button color="primary"(click)="openDialog()"><mat-icon class="material-icons">add</mat-icon> add list</button></mat-list>
-    <mat-list class="list-title" *ngFor="let lists of lists"><p (click)="listProfile(lists)">{{lists.title}}</p></mat-list>
+    <mat-list class="add-list"><button mat-raised-button (click)="openDialog()"><mat-icon class="material-icons">add</mat-icon> Add list</button></mat-list>
+    <mat-list class="list-title" *ngFor="let list of lists"><p (click)="listProfile(list)" [ngClass]= "getStatus(list)">{{list.title}}</p></mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <p><button mat-button color="primary" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></p>
+    <p><button mat-button class="menu" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></p>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

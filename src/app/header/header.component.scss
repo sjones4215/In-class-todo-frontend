@@ -1,12 +1,7 @@
 mat-toolbar{
-  color: rgb(243, 250, 252);
-  background: linear-gradient(rgb(64, 221, 208), rgb(46, 147, 206));
-  box-shadow: 0px -3px 19px black;
-
-  font-family: 'Roboto, monospace';
-  font-weight: 'bold';
-  font-size: 20px;
-  border: red 10px;
+  background: linear-gradient(rgb(35, 35, 235), rgb(184, 184, 238));
+  width: 100%;
+  color: white;
 }
 
 .main-button-header{
@@ -25,11 +20,21 @@ section{
 }
 
 .sign-in{
-  margin-right: 10px;
+  margin-right: -20px;
 }
 
 span {
   cursor: pointer;
 }
 
+button{
+  background:rgb(226, 226, 90);
+  margin-left: 50px
+}
+
+p {
+  color: rgb(214, 213, 213);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+}
 

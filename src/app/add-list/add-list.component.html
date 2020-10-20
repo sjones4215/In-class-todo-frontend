@@ -12,6 +12,6 @@
   </form>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button class="add-list" mat-raised-button color="primary" (click)="addNewList();reloadPage();"[mat-dialog-close]>add list</button>
-  <button class="cancel" mat-raised-button color="primary" mat-dialog-close>Cancel</button>
+  <button class="add-list" mat-raised-button color="primary" (click)="addNewList();"[mat-dialog-close]>add list</button>
+  <button class="cancel" mat-raised-button color="primary" [mat-dialog-close]>Cancel</button>
 </mat-dialog-actions>

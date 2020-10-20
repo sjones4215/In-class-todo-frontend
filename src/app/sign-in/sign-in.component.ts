@@ -29,10 +29,10 @@ export class SignInComponent implements OnInit {
       })
   }
 
-  reloadPage() {
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
-  }
+ // reloadPage() {
+  //  setTimeout(() => {
+   //   window.location.reload();
+   // }, 1000);
+ // }
 }
 

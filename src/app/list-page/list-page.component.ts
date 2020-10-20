@@ -18,7 +18,6 @@ import { MessengerService } from '../services/messenger.service';
 })
 export class ListPageComponent implements OnInit {
   list: List
-  cards: Card[] = []
   delete = false
 
   constructor(private route: ActivatedRoute, private listService: ListService,public dialog: MatDialog, private cardService: CardService) { }
@@ -27,8 +26,7 @@ export class ListPageComponent implements OnInit {
     this.route.params.subscribe(params => {
       if(params.id) {
       this.listService.getAList(params.id).subscribe(data => {
-        this.list = data
-        this.cards = data.cards
+        this.list = Object.assign(new List(), data)
         this.sortCards();
       }
     )}
@@ -36,19 +34,19 @@ export class ListPageComponent implements OnInit {
 }
 
   deleteIcons(){
-    const cardsToDelete = this.cards.filter(c => c.selected)
+    const cardsToDelete = this.list.cards.filter(c => c.selected)
       cardsToDelete.forEach(card => {
         this.deleteCard(card.id)
     })
   }
 
   completeCard() {
-    const cardsToComplete = this.cards.filter(c => c.selected)
+    const cardsToComplete = this.list.cards.filter(c => c.selected)
       cardsToComplete.forEach(card => {
         this.checkComplete(card)
         this.sortCards();
       })
-  }
+    }
 
   checkComplete(card: Card) {
     card.completed = !card.completed
@@ -73,7 +71,7 @@ export class ListPageComponent implements OnInit {
   }
 
   sortCards() {
-    const sortedCards = this.cards.filter(c => c.completed)
+    const sortedCards = this.list.cards.filter(c => c.completed)
        sortedCards.sort( function(x, y) {
          return (x === y)? 0 : x? -1 : 1;
        }

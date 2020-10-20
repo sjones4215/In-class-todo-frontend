@@ -29,8 +29,4 @@ export class AddCardComponent implements OnInit {
       console.log(data)
     })
   }
-
-  reloadPage() {
-    location.reload();
-  }
 }

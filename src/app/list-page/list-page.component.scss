@@ -7,6 +7,8 @@ mat-card-title{
 mat-card {
   max-width: 40%;
   margin-left: 25%;
+  background: #46344E;
+  color:#FAED26;
 }
 
 button {
@@ -36,7 +38,17 @@ mat-icon.check{
 
 .complete {
   text-decoration: line-through;
+  text-decoration-color: black;
 }
 
+mat-list-item {
+  p {
+    color: #FAED26;
+  }
+}
+
+.check.checkmark:after {
+    border: solid black;
+}
 
 

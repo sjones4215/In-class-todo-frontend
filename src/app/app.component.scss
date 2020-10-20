@@ -1,7 +1,10 @@
 .list-title {
   -webkit-filter: brightness(100%);
-  color: white;
-  margin-top: 25px;
+  color: blue;
+  margin-top: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  //font-weight: bold;
 
   &:hover {
     cursor: pointer;
@@ -22,9 +25,11 @@
 }
 
 .mat-sidenav{
-  width: 20%;
+  max-width: 20%;
+  min-width: 20%;
+  margin: 0;
   text-align: center;
-  background: cornflowerblue;
+  background: linear-gradient(to right, white, rgb(72, 214, 178));
 
   h2{
     margin-top: 25px;
@@ -33,14 +38,33 @@
 
 .mat-sidenav-content{
   height: 100%;
+  //background: linear-gradient(white, pink);
+  background: linear-gradient(rgb(197, 143, 228), rgb(139, 75, 243));
 }
 
 
 mat-card {
-
   text-align: center;
   margin-left: 28%;
   margin-top: 18%;
   width: 40%;
   height: 40%;
+  background:#46344E;
+  color: #FAED26;
 }
+
+
+  button {
+    background:rgb(240, 118, 219);
+    color:#46344E;
+  }
+
+  .menu {
+    color: #FAED26;
+    background: none;
+  }
+
+  .complete {
+    text-decoration: line-through;
+    text-decoration-color: white;
+  }

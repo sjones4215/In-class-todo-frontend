@@ -5,12 +5,12 @@
 </mat-sidenav>
   <mat-sidenav-content>
     <mat-card class="list-container" *ngFor="let list of lists">
-      <mat-icon class="material-icons" (click)="reloadPage();deleteList(list.id);">delete</mat-icon>
-      <mat-icon *ngIf="!list.completed"class="material-icons-outlined" (click)="check(list);sortList()">done_outline</mat-icon>
-      <mat-icon *ngIf="list.completed" class="material-icons" (click)="check(list);sortList()">done</mat-icon>
-      <h3>{{list.title}}</h3>
+      <mat-icon class="material-icons" (click)="deleteList(list.id);">delete</mat-icon>
+      <mat-icon *ngIf="!list.completedStatus()"class="material-icons-outlined">done_outline</mat-icon>
+      <mat-icon *ngIf="list.completedStatus()" class="material-icons" color="warn">done</mat-icon>
+      <h3 (click)="listProfile(list)" [ngClass]= "{ complete:list.completedStatus() }">{{list.title}}</h3>
       <mat-card-content>
-      <p>{{list.description}}</p>
+      <p [ngClass]= "{ complete:list.completedStatus()}">{{list.description}}</p>
       </mat-card-content>
     </mat-card>
   </mat-sidenav-content>

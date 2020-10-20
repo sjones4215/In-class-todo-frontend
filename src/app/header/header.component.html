@@ -1,13 +1,13 @@
 <mat-toolbar>
-  <button mat-mini-fab color="primary" class="material-icons" [routerLink]="['/home']">home</button>
+  <button mat-mini-fab class="material-icons home" [routerLink]="['/home']">home</button>
   <section>
     <div class="button-row" *ngIf="!signedIn">
-      <button class="sign-in" mat-raised-button color="primary" (click)="openDialogSignIn();">Sign-in</button>
-      <button class="sign-up" mat-raised-button color="primary" (click)="openDialogSignUp();">Sign-up</button>
+      <button class="sign-in" mat-raised-button (click)="openDialogSignIn();">Sign-in</button>
+      <button class="sign-up" mat-raised-button (click)="openDialogSignUp();">Sign-up</button>
     </div>
   <div class="button-row" *ngIf="signedIn">
-      <p>Hello {{nickname}} !</p>
-      <button mat-raised-button color="primary" (click)="logOut()">Sign Out</button>
+      <p>Hello {{nickname}}!</p>
+      <button mat-raised-button (click)="logOut()">Sign Out</button>
   </div>
   </section>
 </mat-toolbar>

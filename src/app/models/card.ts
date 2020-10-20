@@ -1,7 +1,7 @@
 export class Card {
   id: number
   list_id: number
-  completed: boolean = false
+  completed: boolean 
   selected: boolean = false
   body: string
 }

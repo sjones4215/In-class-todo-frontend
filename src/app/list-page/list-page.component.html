@@ -1,18 +1,18 @@
-<div class="list-container">
+<div class="list-container" *ngIf="list">
   <mat-card class="card-container">
         <mat-icon (click)="deleteIcons();">delete</mat-icon>
         <mat-icon class="check" (click)="completeCard();" [ngClass]="{'card.completed': true}">check</mat-icon>
-        <mat-card-title *ngIf="list">{{list.title}}</mat-card-title>
+        <mat-card-title *ngIf="list" [ngClass]= "{ complete:list.completedStatus() }">{{list.title}}</mat-card-title>
       <mat-divider></mat-divider>
     <mat-card-content class="card">
       <mat-list>
-        <mat-list-item *ngFor="let card of cards">
-          <mat-checkbox [(ngModel)]="card.selected"></mat-checkbox>
+        <mat-list-item *ngFor="let card of list.cards">
+          <mat-checkbox class="check" [(ngModel)]="card.selected" color="primary"></mat-checkbox>
           <p matLine [ngClass]= "{ complete:card.completed }">{{card.body}}</p>
         <mat-divider></mat-divider>
       </mat-list-item>
     </mat-list>
-      <button mat-raised-button color="primary" (click)="openDialogCard();"><mat-icon class="material-icons">add</mat-icon>Add List Item</button>
+      <button mat-raised-button color="accent" (click)="openDialogCard();"><mat-icon class="material-icons">add</mat-icon>Add List Item</button>
     </mat-card-content>
   </mat-card>
 </div>

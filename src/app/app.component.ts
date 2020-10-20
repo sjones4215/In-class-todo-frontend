@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
   opened = true
   lists: List[] = []
   signedIn = false
-  completed = false
+
   constructor (public dialog: MatDialog, private listService: ListService, private router: Router, private localStorageService: LocalStorageService) {}
 
   ngOnInit () {
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit{
   retreiveAllLists() {
     this.listService.getAllLists().subscribe(data => {
       if (data)
-        this.lists = data.lists
+        this.lists = data.lists.map(x => Object.assign(new List(), x))
         console.log(data)
       })
     }
@@ -52,7 +52,11 @@ export class AppComponent implements OnInit{
       this.router.navigate(['listprofile/', lists.id])
     }
 
-
+    getStatus(list: List) {
+      console.log(typeof new List())
+      console.log(typeof list)
+      return { complete: list.completedStatus() }
+    }
 
 
 }
