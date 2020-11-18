@@ -17,8 +17,6 @@ mat-card {
 }
 
 .list-container {
-  box-shadow: 10px 5px 8px rgb(54, 223, 209);
-  background: linear-gradient(rgb(130, 130, 228),blue);
   color:#FAED26;
 }
 
@@ -30,9 +28,6 @@ mat-card.add-list{
   margin-bottom: 50px;
 }
 
-mat-sidenav-content {
-  background: linear-gradient(rgb(193, 116, 238), rgb(139, 75, 243));
-}
 
 h3:hover {
   cursor: pointer;

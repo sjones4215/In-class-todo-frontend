@@ -1,6 +1,5 @@
 .list-title {
   -webkit-filter: brightness(100%);
-  color: blue;
   margin-top: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 25px;
@@ -29,7 +28,6 @@
   min-width: 20%;
   margin: 0;
   text-align: center;
-  background: linear-gradient(to right, white, rgb(72, 214, 178));
 
   h2{
     margin-top: 25px;
@@ -39,7 +37,6 @@
 .mat-sidenav-content{
   height: 100%;
   //background: linear-gradient(white, pink);
-  background: linear-gradient(rgb(197, 143, 228), rgb(139, 75, 243));
 }
 
 
@@ -55,7 +52,6 @@ mat-card {
 
 
   button {
-    background:rgb(240, 118, 219);
     color:#46344E;
   }
 
